@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipes</title>
+</head>
+<body>
+
+ <table border="5">
+     <!-- Table header created here -->
+        <tr>
+            <th>Name</th><th>Short Title</th><th>Youtube Ext.</th><th>Rating</th>
+            <th>Views</th><th>Thumbnail</th><th>Length</th>
+        </tr>
+
+        {% for recipe in recipes %}
+        <!-- THIS POPULATES TABLE CELLS -->
+        <tr>
+            {% for value in recipe.values() %}
+            <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+
+</table>
+
+    <br><br>
+
+<a href="{{url_for('search')}}">New Search</a>
+</body>
+</html>
